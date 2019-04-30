@@ -379,7 +379,8 @@ class DocumentManagement:
 
         print('Document read by Id {0}'.format(doc_id))
         print('Public Key: \n{0}'.format(response.get('key')))
-        return response.get('key')
+        print('Queue: {0}'.format(response.get('queue')))
+        return {'publicKey': response.get('key'), 'queue': response.get('queue')}
 
     @staticmethod
     def ReadDocuments(client):

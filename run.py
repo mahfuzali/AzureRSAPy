@@ -52,7 +52,7 @@ def main():
             
 
 
-            d.DocumentManagement.CreateDocuments(client)
+            #d.DocumentManagement.CreateDocuments(client)
             
             #key = d.DocumentManagement.ReadDocument(client,'9d88e4ce-3fe8-49e2-9c8f-446530299c13')
             #k = keys.Key().read_key(key)
