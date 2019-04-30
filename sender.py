@@ -5,6 +5,7 @@ import crypto.signature as signature
 import crypto.encrypt as encrypt
 import database.db as d
 import json
+from Cryptodome.PublicKey import RSA
 
 import azure.cosmos.documents as documents
 import azure.cosmos.cosmos_client as cosmos_client
@@ -60,14 +61,14 @@ def main():
             
             receiverInfo = d.DocumentManagement.ReadDocument(client,'0376af03-9620-4980-a905-dbfa6b189495')
             message = 'Hello World'
-            print("Here 2")
-            hsh = h.hash_string(message) 
-            sign = s.sign(hsh, privateKey)
+            print("Here 2")       
+
+            signed = s.sign(message, privateKey)
             #cipher = enc.encrypt(receiverInfo['publicKey'], message)
             
             print("Here 3")
-            print(hashmsg)
-            print(sign)
+            print(message)
+            print(signed)
             #print(cipher)
             #queue_service.put_message(receiverInfo['queue'], cipher)
             #queue_service.put_message(receiverInfo['queue'], sign)
